@@ -1,0 +1,10 @@
+import pyttsx3
+import PyPDF2
+book=open('Project Management for SPPU 19.pdf', 'rb')
+pdfReader = PyPDF2.PdfReader(book)
+speaker = pyttsx3.init()
+for num in range(13,223):
+    page = pdfReader.pages[13]
+    text = page.extract_text()
+    speaker.say(text)
+    speaker.runAndWait()
